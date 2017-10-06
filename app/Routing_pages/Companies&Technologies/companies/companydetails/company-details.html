@@ -1,3 +1,16 @@
+<html>
+<head>
+<script type="text/javascript">
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+}
+</script>
+</head>
+<div id="printableArea">
 <h2>Company Details</h2>
 <div class="row">
     <div class="col-md-4 col-sm-4">
@@ -18,5 +31,8 @@
     </div>
 </div>
 <div class="row">
-  <button type="button" class="btn btn-primary pdfButton">Save As PDF</button>
+
+  <input type="submit" name="submit" value="Download As PDF"  onclick="printDiv('printableArea')"   style="padding-left: 5px;width: 150px;background: #800;color: #fff;font-weight: bold; position:relative; top:-81px; right:-280px; margin-left: 10px; height: 32px;"  />
 </div>
+</div>
+</html>
